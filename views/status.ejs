@@ -3,52 +3,50 @@
     <%- include('./partials/header.ejs') %>
 <body>
     <%- include('./partials/banner.ejs') %>
-    <% if(success == false) { console.log("it entered if"); %>
-        
-        <div class="alert alert-danger" role="alert"><%= message %></div>
-        <% } else { console.log("it entered else"); %>
-
-
+    
         <section id="about">
             <div class="container px-4">
                 <div class="row gx-4 justify-content-center">
                     <div class="col-lg-8">
+						<% if(success == false) { %>
+        					<div class="alert alert-danger" role="alert"><%= message %></div>
+						<% } else {  %>
                         <h2 class="form_title">Driving License Details</h2>
-<table class="table">
-    <tbody>
+                        <table class="table">
+                          	<tbody>
+								<tr>
+									<th scope="row">Driving License Holders Name:</td>
+									<td><%= data["Holder's Name"] %></td>
+								</tr>
+								<tr>
+									<th scope="row">License Status:</td>
+									<td><%= data['Current Status'] %></td>
+								</tr>
+								<tr>
+									<th scope="row">Vehicles Permited:</td>
+									<td><%= data['Vehicles permited'] %></td>
+								</tr>
+								<tr>
+									<th scope="row">Issue Date:</td>
+									<td><%= data['Initial Issue Date'] %></td>
+								</tr>
+								<tr>
+									<th scope="row">Issue Office:</td>
+									<td><%= data['Initial Issuing Office'] %></td>
+								</tr>
+								<tr>
+									<th scope="row">License Expiry Date:</td>
+									<td><%= data["expiryDate"] %></td>
+								</tr>
+                          	</tbody>
+                        </table>
+						<% } %>
+                        <a href="/" class="btn btn-primary">Back</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </tbody>
-    <tr>
-        <th scope="row">Driving License Holders Name:</td>
-        <td><%= data["Holder's Name"] %></td>
-      </tr>
-      <tr>
-        <th scope="row">License Status:</td>
-        <td><%= data['Current Status'] %></td>
-      </tr>
-      <tr>
-        <th scope="row">Vehicles Permited:</td>
-        <td><%= data['Vehicles permited'] %></td>
-      </tr>
-      <tr>
-          <th scope="row">Issue Date:</td>
-          <td><%= data['Initial Issue Date'] %></td>
-        </tr>
-        <tr>
-          <th scope="row">Issue Office:</td>
-          <td><%= data['Initial Issuing Office'] %></td>
-        </tr>
-      <tr>
-          <th scope="row">License Expiry Date:</td>
-          <td><%= data["expiryDate"] %></td>
-        </tr>
-  </table>
-  <a href="/" class="btn btn-primary">Back</a>
-  </div>
-  </div>
-  </div>
-  </section>
-<% } %>
 <%- include('./partials/footer.ejs') %>
 </body>
 </html>

@@ -115,7 +115,7 @@ app.post("/status", (req,res) => {
 
                     if (JSON.stringify(dlResponse) === "{}") {
                         res.render("status", 
-                            {success :false, message: "Invalid Data! please check the data you submitted!"}
+                            {success :false, message: "Invalid Data! Please check the data you submitted!"}
                         );
                     } else {
                         res.render("status", 
