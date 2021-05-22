@@ -6,9 +6,9 @@ var request = require('request');
 var cheerio = require('cheerio');
 const ejs = require('ejs');
 
-const static_path = path.join(__dirname, "../views");
+// const static_path = path.join(__dirname, "./src");
 
-app.use(express.static(static_path));
+// app.use(express.static(static_path));
 
 app.set('view engine', 'ejs');
 // app.use("views", static_path);
